@@ -1,0 +1,11 @@
+--- a/fdtdump.c	1970-01-01 00:00:00.000000000 0000
++++ b/fdtdump.c	1970-01-01 00:00:00.000000001 0000
+@@ -213,7 +213,7 @@
+ 
+ 	/* try and locate an embedded fdt in a bigger blob */
+ 	if (scan) {
+-		unsigned char smagic[FDT_MAGIC_SIZE];
++		unsigned char smagic[sizeof(struct fdt_header)];
+ 		char *p = buf;
+ 		char *endp = buf + len;
+ 
